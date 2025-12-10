@@ -1,14 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Link from "next/link";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Planetario | The best planet explorer on this planet (Mars soon™)",
-  description: "The best planet explorer on this planet (Mars soon™)",
-};
+import { ExploreButton } from "@/components/ExploreButton";
 
 export default function Home() {
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -21,22 +16,10 @@ export default function Home() {
           priority
         />
         <div className={styles.intro}>
-          <h1>The best planet explorer on this planet (Mars soon™)</h1>
+          <h1>The best planet explorer on this planet <span className={styles.soon}> (Mars soon™)</span></h1>
         </div>
         <div className={styles.ctas}>
-          <Link
-            className={styles.primary}
-            href="/planets"
-          >
-            <Image
-              className={styles.logo}
-              src="/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Explore now
-          </Link>
+          <ExploreButton />
         </div>
       </main>
     </div>

@@ -1,8 +1,12 @@
-import styles from "@/app/page.module.css";
-import { getPlanets } from "@/lib/data";
+"use client";
 
-export default async function Planets() {
-  const planets = await getPlanets();
+import styles from "@/app/page.module.css";
+import { PlanetsExplorer } from "@/components/PlanetsExplorer";
+import { useAppContext } from "@/contexts/AppContext";
+import { useEffect } from "react";
+
+export default function Planets() {
+  const {planets, setPlanets} = useAppContext();
 
   if (!planets) {
     return <div>No planets found</div>;
@@ -11,13 +15,7 @@ export default async function Planets() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <h1>Welcome to Mars</h1>
-        {planets.map((planet, index) => (
-          <div key={index}>
-            <h2>{planet.name}</h2>
-            <p>{planet.terrain}</p>
-          </div>
-        ))}
+        <PlanetsExplorer planets={planets} />
       </main>
     </div>
   );
