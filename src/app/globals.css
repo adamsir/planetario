@@ -74,6 +74,13 @@ button.secondary {
   border-color: var(--button-secondary-border);
 }
 
+a.ghost,
+button.ghost {
+  background: none;
+  border-color: #3b3b3b;
+  height: 28px;
+}
+
 .pagination {
   display: flex;
   width: 100%;

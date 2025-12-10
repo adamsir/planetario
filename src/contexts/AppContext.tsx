@@ -21,16 +21,9 @@ export function AppProvider({
 }: AppProviderProps) {
   const [planets, setPlanets] = useState<Planet[]>(initialData);
 
-  const value = useMemo(
-    () => ({ planets, setPlanets }),
-    [planets]
-  );
+  const value = useMemo(() => ({ planets, setPlanets }), [planets]);
 
-  return (
-    <AppContext.Provider value={value}>
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {

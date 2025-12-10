@@ -12,10 +12,10 @@ export default function Home() {
             <span className={styles.soon}> (Mars soon™)</span>
           </h1>
         </div>
-        <RandomFact />
         <div className={styles.ctas}>
           <ExploreButton />
         </div>
+        <RandomFact />
       </main>
     </div>
   );
