@@ -1,7 +1,7 @@
 "use client";
 
 import { Planet } from "@/types/planets";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 interface AppContextType {
   planets: Planet[];
@@ -21,8 +21,13 @@ export function AppProvider({
 }: AppProviderProps) {
   const [planets, setPlanets] = useState<Planet[]>(initialData);
 
+  const value = useMemo(
+    () => ({ planets, setPlanets }),
+    [planets]
+  );
+
   return (
-    <AppContext.Provider value={{ planets, setPlanets }}>
+    <AppContext.Provider value={value}>
       {children}
     </AppContext.Provider>
   );
