@@ -41,7 +41,14 @@ a {
   }
 }
 
-a {
+[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+a,
+button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,14 +62,31 @@ a {
   font-weight: 500;
 }
 
-a.primary {
+a.primary,
+button.primary {
   background: var(--text-primary);
   color: var(--background);
   gap: 8px;
 }
 
-a.secondary {
+a.secondary,
+button.secondary {
   border-color: var(--button-secondary-border);
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.explorer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* Enable hover only on non-touch devices */

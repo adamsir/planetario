@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
 import { getPlanets } from "@/lib/data";
+import { Header } from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppProvider initialData={planets}>{children}</AppProvider>
+        <AppProvider initialData={planets}>
+          <Header />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
