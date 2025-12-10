@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Planet } from "@/types/planets";
 import { createContext, useContext, useState } from "react";

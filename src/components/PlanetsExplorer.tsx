@@ -4,7 +4,7 @@ import { Planet } from "@/types/planets";
 
 type PlanetsExplorerProps = {
   planets: Planet[];
-}
+};
 
 export function PlanetsExplorer({ planets }: PlanetsExplorerProps) {
   return (

@@ -14,4 +14,3 @@ export interface Planet {
   edited: string;
   url: string;
 }
-

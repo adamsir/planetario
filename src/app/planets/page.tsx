@@ -3,10 +3,9 @@
 import styles from "@/app/page.module.css";
 import { PlanetsExplorer } from "@/components/PlanetsExplorer";
 import { useAppContext } from "@/contexts/AppContext";
-import { useEffect } from "react";
 
 export default function Planets() {
-  const {planets, setPlanets} = useAppContext();
+  const { planets } = useAppContext();
 
   if (!planets) {
     return <div>No planets found</div>;

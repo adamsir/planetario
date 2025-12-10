@@ -4,5 +4,9 @@ import { PropsWithChildren } from "react";
 type ButtonProps = PropsWithChildren<LinkProps>;
 
 export function Button({ children, ...props }: ButtonProps) {
-    return <Link className="primary" {...props}>{children}</Link>;
+  return (
+    <Link className="primary" {...props}>
+      {children}
+    </Link>
+  );
 }
